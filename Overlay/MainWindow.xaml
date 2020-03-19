@@ -1,0 +1,44 @@
+﻿<Window x:Class="Overlay.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Overlay"
+		AllowsTransparency="True"
+		WindowStyle="None"
+        mc:Ignorable="d"
+		Background="Transparent"
+		SizeToContent="WidthAndHeight"
+		Closing="Window_Closing"
+		Topmost="True"
+        Title="MainWindow" Height="450" Width="800">
+
+	<Border BorderThickness="5" BorderBrush="#55FF0000">
+		<Grid>
+			<Grid.ColumnDefinitions>
+				<ColumnDefinition Width="Auto" />
+				<ColumnDefinition />
+			</Grid.ColumnDefinitions>
+
+			<Grid Background="White">
+				<StackPanel Orientation="Vertical">
+					<Button Content="SS" Padding="5" Click="Button_Click" />
+					<Button Content="X" Padding="5" Click="Button_Click_1" />
+					<Button Content="R" Padding="5" Click="Button_Click_2" />
+				</StackPanel>
+			</Grid>
+
+			<Grid Name="grid"
+				  Grid.Column="1"
+				  Background="Green"
+				  Opacity="0.2"
+				  MouseLeftButtonDown="Grid_MouseLeftButtonDown" />
+
+			<Border 
+					Grid.Column="1"
+					Name="clientRect" 
+					HorizontalAlignment="Left" 
+					VerticalAlignment="Top" />
+		</Grid>
+	</Border>
+</Window>
